@@ -1,0 +1,67 @@
+Before you start coding, look up the answers the following questions and place them inline below:
+
+What are some books that Martin Fowler has written?
+What's the difference between "active record" and "ActiveRecord"?
+Is the "active record" pattern an ORM?
+Why might we want to use an ORM in our code?
+What gem do we need to allow Sinatra to interact with ActiveRecord?
+What is rake?
+What is a database migration?
+What command can we use to create a new ActiveRecord migration?
+What command runs our existing migrations?
+What commands reverses a migration?
+
+
+
+~~~What command tells us which migrations have run and which have not?
+
+**
+rake db:migrate:status    up means it has been migrated, down means that it hasn't or has been rolledback. 
+**
+
+
+~~~Which class do we have to extend if we want to create a new model?
+
+**
+
+**
+
+~~~What's the difference between ActiveRecord's .new and .create methods?
+
+**
+With .new, an object can be instantiated without beinf save, if you need to, you would then have to save it whereas .create does this implicitely.
+**
+
+~~~What's the difference between ActiveRecord's .find and .find_by methods?
+
+**
+.find is typically used to retrieve a row by ID and .find_by is for searching for info within a column. SYNTAX if column name="name": Model.find_by_name("Bob")
+**
+
+~~~What's the difference between ActiveRecord's .find_by and .where methods?
+
+**
+.where is used to return an ActiveRecord Relation that you can chain other methods onto. SYNTAX: Model.where(condition); Squad.where("squad_id=2") and will return multiple values ie[user, user user]
+**
+
+~~~What ActiveRecord method do we use to change a value in the database?
+
+**
+user = User.find_by(name: 'David')
+user.name = 'Dave'
+user.save
+
+and for shorthand:
+user = User.find_by(name: 'David')
+user.update(name: 'Dave')
+
+User.update_all "max_login_attempts = 3, must_change_password = 'true'"
+@@this will upate several records in bulk
+**
+
+~~~What ActiveRecord method do we use to remove an item from the database?
+
+**
+user = User.find_by(name: 'David')
+user.destroy
+**
