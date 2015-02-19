@@ -5,15 +5,20 @@
 	<title>Index of Artists</title>
 </head>
 <body>
-	This is the index page.
-<p>
-	<a href="/music/:id">View this artist's details</a>
-</p>
+	<h1>These are our Fave Musicians</h1>
 
 
-<p>
-	<a href="/music/:id/edit">Edit this artist</a>
-</p>
+<ul>
+	<% @music.each do |artist| %>
+
+	<li>
+	<h4><%= artist.Artist %></h4>
+	<h4><%= artist.Year %></h4>
+	</li>
+	<% end %>
+</ul>
+
+
 
 
 <p>

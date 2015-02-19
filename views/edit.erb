@@ -8,9 +8,26 @@
 	This is the edit page
 
 	<form action="/music/:id" method="POST">
+	<p>
 	<input type="hidden" name="_method" value="put">
-		<input type="text">
-		<input type="submit" value="Edit">
+		<label for="name">Name: </label>
+		<input type="text" name="name" id="name" value="Artist's Name">
+	</p>
+	<p>	
+		<label for="song">Song Title: </label>
+		<input type="text" name="song" id="song" value="Song Title">
+	</p>
+	<p>
+		<label for="lyrics">Lyrics: </label>
+		<input type="text" name="lyrics" id="lyrics" value="Lyrics">
+	</p>
+	<p>
+		<label for="year">Year: </label>
+		<input type="text" name="year" id="year" value="Year">
+	</p>
+	<p>
+	<input type="submit" value="Edit">
+	</p>
 	</form>
 
 	<a href="/music">Home Page</a>

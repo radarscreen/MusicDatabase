@@ -3,8 +3,8 @@ require 'sinatra'
 require 'better_errors'
 require 'sinatra/reloader'
 require 'pry'
-# require './models/music'
-# require './models/artist'
+require './models/music'
+
 
 configure :development do
   use BetterErrors::Middleware
@@ -17,7 +17,10 @@ get '/' do
 end
 
 get '/music' do
- 
+ 	@music = Music.all
+
+ 	#@id = Music.find(params[:id])
+ 	#@artist = Music.find(params[:name])
   erb :index
 end
 
@@ -31,12 +34,12 @@ get '/music/:id' do
 end
 
 get '/music/:id/edit' do
-  
+ 
   erb :edit
 end
 
 post '/music' do
-  
+  Music.create(Artist: params[:name], Song: params[:song], Lyrics: params[:lyrics], Year: params[:year])
   redirect '/music'
 end
 

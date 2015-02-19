@@ -9,8 +9,25 @@
 	This is where you add an artist!
 
 	<form action="/music" method="POST">
-		<input type="text">
+	<p>
+		<label for="name">Name: </label>
+		<input type="text" name="name" id="name" value="Artist's Name">
+	</p>
+	<p>
+		<label for="song">Song Title: </label>
+		<input type="text" name="song" id="song" value="Song Title">
+	</p>
+	<p>
+		<label for="lyrics">Lyrics: </label>
+		<input type="text" name="lyrics" id="lyrics" value="Lyrics">
+	</p>
+	<p>
+		<label for="year">Year: </label>
+		<input type="text" name="year" id="year" value="Year">
+	</p>
+	<p>
 		<input type="submit" value="New">
+	</p>
 	</form>
 
 	<a href="/music">Home Page</a>
